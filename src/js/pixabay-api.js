@@ -8,8 +8,8 @@ export function getPhotos(picture) {
     const params = new URLSearchParams({
         key: API_KEY,
         q: picture,
-        image_type: "photo",
-        orientation: "horizontal",
+        image_type: 'photo',
+        orientation: 'horizontal',
         safesearch: true,
     });
 

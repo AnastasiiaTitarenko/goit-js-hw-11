@@ -1,4 +1,5 @@
 `use strict`;
+
 // Library iziToast
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
@@ -49,7 +50,7 @@ function handleSubmit(event) {
         .catch(error => {
             iziToast.error({
                 title: "Error",
-                message: "Error"
+                message: "Error. Please try again!"
             });
              clearMarkup();
         })
