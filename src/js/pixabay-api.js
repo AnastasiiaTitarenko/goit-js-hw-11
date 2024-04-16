@@ -1,9 +1,9 @@
 'use strict';
-
+const BASE_URL = 'https://pixabay.com/api/';
+const API_KEY = "43303597-4cf3538acd20e5586f11f779c";
 
 export function getPhotos(picture) {
-    const BASE_URL = 'https://pixabay.com/api/';
-    const API_KEY = "43303597-4cf3538acd20e5586f11f779c";
+    
     
     const params = new URLSearchParams({
         key: API_KEY,

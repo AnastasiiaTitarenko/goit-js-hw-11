@@ -21,14 +21,15 @@ const searchGallery = document.getElementById("gallery");
 searchForm.addEventListener("submit", handleSubmit);
 
 function clearMarkup() {
-  gallery.innerHTML = '';
+  searchGallery.innerHTML = '';
 }
 function handleSubmit(event) {
     event.preventDefault();
     const { picture } = event.currentTarget;
 
     loader.style.display = "block";
-     clearMarkup();
+    clearMarkup();
+    
 
     getPhotos(picture.value)
         .then(data => {
@@ -38,14 +39,9 @@ function handleSubmit(event) {
                     message: "Sorry, there are no images matching your search query. Please try again!",
                 });
             } else {
-                gallery.innerHTML = createMarkup(data.hits);
-
-                const gallery = new SimpleLightbox(`.galleryCard a`, {
-                    captionType: `attr`,
-                    captionsData: `alt`,
-                    captionDelay: 250,
-                });
+                searchGallery.innerHTML = createMarkup(data.hits);
             }
+            
         })
         .catch(error => {
             iziToast.error({
@@ -59,6 +55,13 @@ function handleSubmit(event) {
             searchForm.reset();
         });
 }
+const gallery = new SimpleLightbox(`.galleryCard a`, {
+                    captionType: `attr`,
+                    captionsData: `alt`,
+                    captionDelay: 250,
+                });
+                
+
 
 
 
