@@ -40,6 +40,7 @@ function handleSubmit(event) {
                 });
             } else {
                 searchGallery.innerHTML = createMarkup(data.hits);
+                gallery.refresh();
             }
             
         })
